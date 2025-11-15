@@ -9,16 +9,16 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [![Donate on Steam](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
 
 ## Features
-- Changes only paint, seed and wear on weapons, knives, gloves and agents
+- Changes only knives, paints, seed and wear
 - MySQL based
 - Data syncs on player connect
-- Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
-- Added command **`!ws`** to show website
-- Added command **`!knife`** to show menu with knives
-- Added command **`!gloves`** to show menu with gloves
-- Added command **`!agents`** to show menu with agents
-- Added command **`!pins`** to show menu with pins
-- Added command **`!music`** to show menu with music
+- **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
+- **`!ws`** to show website
+- **`!knife`** to show menu with knives
+- **`!gloves`** to show menu with gloves
+- **`!agents`** to show menu with agents
+- **`!pins`** to show menu with pins
+- **`!music`** to show menu with music
 - Translations support, submit a PR if you want to share your translation
 
 ## ⚙️ Requirements
