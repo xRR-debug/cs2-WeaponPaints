@@ -1,6 +1,7 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
+using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
@@ -33,28 +34,6 @@ namespace WeaponPaints
 			try
 			{
 				_ = Task.Run(async () => await WeaponSync.GetPlayerData(playerInfo));
-				/*
-				if (Config.Additional.SkinEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
-				}
-				if (Config.Additional.KnifeEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
-				}
-				if (Config.Additional.GloveEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
-				}
-				if (Config.Additional.AgentEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
-				}
-				if (Config.Additional.MusicEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
-				}
-				*/
 			}
 			catch
 			{
@@ -134,7 +113,9 @@ namespace WeaponPaints
 
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
 		{
-			CCSPlayerController? player = @event.Userid;
+			CommandInfo commandInfo;
+
+            CCSPlayerController? player = @event.Userid;
 
 			if (player is null || !player.IsValid || Config.Additional is { KnifeEnabled: false, GloveEnabled: false })
 				return HookResult.Continue;
@@ -144,15 +125,20 @@ namespace WeaponPaints
 			if (pawn == null || !pawn.IsValid)
 				return HookResult.Continue;
 
-			GivePlayerMusicKit(player);
-			GivePlayerAgent(player);
+			//GivePlayerMusicKit(player);
+			//GivePlayerAgent(player);
+			//fix broken attack w knife
 			Server.NextFrame(() =>
 			{
-				GivePlayerGloves(player);
-			});
-			GivePlayerPin(player);
-
-			return HookResult.Continue;
+				//fix model slide
+				//GivePlayerGloves(player);
+                //GiveKnifeToPlayer(player);
+                OnCommandRefresh(player, null);
+            });
+			//GivePlayerPin(player);
+			//RegisterCommands();
+          
+            return HookResult.Continue;
 		}
 
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
