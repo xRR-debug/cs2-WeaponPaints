@@ -2,6 +2,9 @@
 
 ## Description
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for **[CSSharp](https://docs.cssharp.dev/docs/guides/getting-started.html)**. 
+fix arms models break
+fix models slide(removed model call func xd)
+removed shit like gloves, pins etc.
 
 ## Features
 - Changes only knives, paints, seed and wear
