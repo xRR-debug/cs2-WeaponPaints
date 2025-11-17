@@ -11,7 +11,6 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - **`!ws`** to show website
 - **`!knife`** to show menu with knives
 - **`!skins`** to show menu with skins
-- Translations support, submit a PR if you want to share your translation
 
 ## ⚙️ Requirements
 **Ensure all the following dependencies are installed before proceeding**
@@ -40,7 +39,6 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 	"DatabasePassword": "", // MySQL user password
 	"DatabaseName": "", // MySQL database name
 	"CmdRefreshCooldownSeconds": 60, // Cooldown time in refreshing skins (!wp command)
-	"Prefix": "[WeaponPaints]", // Prefix every chat message
 	"Website": "example.com/skins", // Website used in WebsiteMessageCommand (!ws command)
 "Messages": {
 	"WebsiteMessageCommand": "Visit {WEBSITE} where you can change skins.", // Information about website where player can change skins (!ws command) Set to empty to disable
