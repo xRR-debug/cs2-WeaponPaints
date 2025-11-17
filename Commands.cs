@@ -70,7 +70,11 @@ public partial class WeaponPaints
 		{
 			player!.Print(Localizer["wp_info_website", Config.Website]);
 		}
-		if (!string.IsNullOrEmpty(Localizer["wp_info_refresh"]))
+        if (!string.IsNullOrEmpty(Localizer["wp_info_skins"]))
+        {
+            player!.Print(Localizer["wp_info_skins"]);
+        }
+        if (!string.IsNullOrEmpty(Localizer["wp_info_refresh"]))
 		{
 			player!.Print(Localizer["wp_info_refresh"]);
 		}
