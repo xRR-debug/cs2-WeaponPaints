@@ -9,19 +9,19 @@ namespace WeaponPaints
 		public bool KnifeEnabled { get; set; } = true;
 
 		[JsonPropertyName("GloveEnabled")]
-		public bool GloveEnabled { get; set; } = true;
+		public bool GloveEnabled { get; set; } = false;
 
 		[JsonPropertyName("MusicEnabled")]
-		public bool MusicEnabled { get; set; } = true;
+		public bool MusicEnabled { get; set; } = false;
 
 		[JsonPropertyName("AgentEnabled")]
-		public bool AgentEnabled { get; set; } = true;
+		public bool AgentEnabled { get; set; } = false;
 
 		[JsonPropertyName("SkinEnabled")]
 		public bool SkinEnabled { get; set; } = true;
 
 		[JsonPropertyName("PinsEnabled")]
-		public bool PinsEnabled { get; set; } = true;
+		public bool PinsEnabled { get; set; } = false;
 
 		[JsonPropertyName("CommandWpEnabled")]
 		public bool CommandWpEnabled { get; set; } = true;
@@ -30,7 +30,7 @@ namespace WeaponPaints
 		public bool CommandKillEnabled { get; set; } = true;
 
 		[JsonPropertyName("CommandKnife")]
-		public List<string> CommandKnife { get; set; } = ["knife"];
+		public List<string> CommandKnife { get; set; } = ["knife, knive"];
 
 		[JsonPropertyName("CommandMusic")]
 		public List<string> CommandMusic { get; set; } = ["music"];
